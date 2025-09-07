@@ -445,3 +445,203 @@ $$
 
 - **Prediction at $X_1 = 5$, $X_2 = 4$:**  
   $$\hat{Y} = 86.29$$
+
+
+  ---
+
+
+  # Multivariate Analysis of Variance (MANOVA)
+
+**MANOVA (Multivariate Analysis of Variance)** compares the means of **multiple dependent variables** across groups defined by one or more **independent variables**.
+
+Unlike ANOVA (which tests group differences for a single dependent variable), **MANOVA** accounts for **correlations between multiple dependent variables**, offering a more **comprehensive understanding** of group differences.
+
+---
+
+## Key Assumptions of MANOVA
+
+- **Multivariate Normality**:  
+  All dependent variables should be normally distributed **within each group**.
+
+- **Homogeneity of Covariance Matrices**:  
+  The variance-covariance matrices of the dependent variables should be **equal across groups**.
+
+- **Independence of Observations**:  
+  Observations should be independent — one participant's data must not influence another's.
+
+- **Linearity**:  
+  The relationships between each pair of dependent variables should be **linear within each group**.
+
+---
+
+## Why Assumption Checking Matters
+
+| Reason                  | Explanation                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| Validity of Results   | Violating assumptions can lead to **misleading or invalid** conclusions.    |
+| Interpretation        | Proper interpretation relies on assumption validity. If assumptions fail, consider alternative methods. |
+| Statistical Power     | Satisfying assumptions improves the ability to detect **true** group differences. |
+
+---
+
+## Types of MANOVA
+
+| Type          | Description                                                  |
+|---------------|--------------------------------------------------------------|
+| **One-way MANOVA** | Tests differences in multiple DVs based on a **single** IV.   |
+| **Two-way MANOVA** | Examines the combined effects of **two** IVs on multiple DVs. |
+
+---
+
+## Example: Testing Diet Plans
+
+### Objective:
+Determine if different diet plans lead to differences in **health outcomes** like weight, blood pressure, and cholesterol.
+
+### Hypotheses:
+- **Null Hypothesis**: No significant difference in the combined health outcomes across diet plans.
+- **Alternative Hypothesis**: At least one diet leads to a different combination of outcomes.
+
+### Steps:
+1. Check MANOVA assumptions.
+2. Conduct MANOVA test.
+3. If significant, run **post-hoc tests** to identify where differences lie.
+
+---
+
+## Benefits of Using MANOVA
+
+- **Comprehensive Analysis**:  
+  Understand group differences across multiple outcomes simultaneously.
+
+- **Reduced Type I Error**:  
+  Considers correlations between DVs, avoiding inflated error from running separate ANOVAs.
+
+- **Increased Statistical Power**:  
+  Higher likelihood of detecting actual group effects when DVs are correlated.
+
+- **Informative Visualizations**:  
+  Group differences and relationships can be visualized using scatter plots, profile plots, and canonical discriminant analysis.
+
+---
+
+## Practical Applications of MANOVA
+
+| Domain                 | Use Case Example                                                                 |
+|------------------------|----------------------------------------------------------------------------------|
+| **Education**        | Compare teaching methods on **grades**, **participation**, and **motivation**.   |
+| **Healthcare**       | Evaluate treatment effects on **weight**, **BP**, and **glucose**.               |
+| **Marketing**        | Compare ad campaigns based on **recall**, **engagement**, and **conversion**.    |
+| **Psychology**       | Assess therapy outcomes on **anxiety**, **mood**, and **stress**.                |
+
+---
+
+# Multivariate Analysis of Covariance (MANCOVA)
+
+**MANCOVA** is a statistical technique used to evaluate group differences across multiple dependent variables **while controlling for covariates**. It provides deeper insights into relationships among variables and helps reduce error by adjusting for known influences.
+
+---
+
+## Overview of MANCOVA
+
+- **MANCOVA** = MANOVA + Covariates
+- Analyzes multiple dependent variables while **controlling for continuous covariates**
+- Helps clarify the **true effect** of the independent variable(s) on the dependent variables
+- Leads to more **accurate and insightful conclusions**
+
+---
+
+## Assumptions of MANCOVA
+
+To use MANCOVA correctly, the following assumptions must be satisfied:
+
+- **Multivariate Normality**:  
+  All dependent variables should follow a multivariate normal distribution within each group
+
+- **Homogeneity of Variance-Covariance Matrices**:  
+  The variance-covariance matrices should be equal across all groups
+
+- **Linearity**:  
+  The relationships between dependent variables and covariates must be linear
+
+- **Independence of Observations**:  
+  Each data point must be independent of others
+
+---
+
+## Unique Assumptions of MANCOVA
+
+In addition to the standard MANOVA assumptions, MANCOVA adds:
+
+- **Homogeneity of Regression Slopes**:  
+  The effect of covariates on dependent variables should be consistent across all groups
+
+- **Measurement Level**:  
+  Covariates should be **continuous**; categorical covariates require different techniques or encoding
+
+---
+
+## Role of Covariates in MANCOVA
+
+| Benefit                    | Explanation                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| Reduce Error Variance   | By accounting for external influences (e.g., age, baseline scores)          |
+| Adjust Group Means      | Clarifies the **true effect** of independent variables by removing covariate bias |
+| Increase Statistical Power | Increases the precision and sensitivity of tests                         |
+
+---
+
+## MANCOVA in Action
+
+**Research Question:**  
+> Do different diet plans affect weight loss, cholesterol levels, and blood pressure?
+
+### Variables:
+- **Independent Variable (IV)**: Diet plan (A, B, C)
+- **Dependent Variables (DVs)**: Weight loss, cholesterol, blood pressure
+- **Covariates**: Initial weight, age, exercise level
+
+### Steps:
+1. Collect data
+2. Check assumptions
+3. Perform MANCOVA
+4. Conduct post-hoc tests (if significant)
+5. Interpret multivariate and univariate results
+
+---
+
+## Benefits of MANCOVA
+
+| Benefit                      | Description                                                               |
+|------------------------------|---------------------------------------------------------------------------|
+| Reduced Error Variance     | Improves accuracy of effect estimates                                      |
+| Increased Power            | Enhances ability to detect significant group differences                   |
+| Adjusted Group Means       | Offers clearer insights into the true impact of the IVs                    |
+
+---
+
+## Interpreting MANCOVA Results
+
+| Output Type         | Description                                                                 |
+|---------------------|-----------------------------------------------------------------------------|
+| **Multivariate Tests** | Assess group differences across the combined DVs (after controlling for covariates) |
+| **Univariate Tests**   | Examine group differences for each DV individually (if multivariate test is significant) |
+| **Effect Size**        | Important to determine practical significance, not just statistical       |
+
+---
+
+## Limitations and Considerations
+
+- **Assumption Violations**  
+  Compromise result validity — alternative methods may be required
+
+- **Covariate Selection**  
+  Must be thoughtful — irrelevant or missing covariates distort findings
+
+- **Interpretation Complexity**  
+  Relationships among variables can be complex and require care
+
+- **Generalizability**  
+  Results may be limited to the sample and context used in the study
+
+---
